@@ -1,0 +1,99 @@
+/* ==========================================================================
+   GameCodex — ficha.css (HU-09)
+   Estilos propios de la ficha de videojuego.
+   Solo variables de variables.css; los componentes comunes están en base.css.
+   ========================================================================== */
+
+.ficha-volver { margin-bottom: var(--espacio-6); }
+
+/* ---------- Ficha completa ---------- */
+.ficha {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: var(--espacio-6);
+  align-items: start;
+}
+
+/* Portada 16:9 */
+.ficha-portada {
+  border: var(--borde);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--color-surface-2);
+}
+.ficha-portada img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.ficha-sin-imagen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+/* Columna de información */
+.ficha-info {
+  background: var(--color-surface);
+  border: var(--borde);
+  border-radius: var(--radius);
+  padding: var(--espacio-5);
+}
+.ficha-seccion {
+  display: block;
+  margin-bottom: var(--espacio-2);
+  color: var(--epic-3);            /* color de la épica "Consultar videojuegos" */
+  font-size: var(--text-sm);
+  font-weight: var(--peso-semibold);
+}
+.ficha-info h1 { margin-bottom: var(--espacio-3); }
+
+.ficha-valoracion {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-3);
+  margin-bottom: var(--espacio-4);
+}
+.ficha-valoracion-numero {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  font-weight: var(--peso-medio);
+}
+
+.ficha-descripcion { color: var(--color-text-muted); margin-bottom: var(--espacio-5); }
+
+/* Datos: género, plataformas, año, desarrolladora */
+.ficha-datos { display: grid; gap: var(--espacio-4); }
+.ficha-dato {
+  padding-top: var(--espacio-4);
+  border-top: var(--borde);
+}
+.ficha-dato dt {
+  margin-bottom: var(--espacio-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  font-weight: var(--peso-medio);
+}
+.ficha-dato dd { margin: 0; }
+.ficha-dato .etiquetas { margin-bottom: 0; }
+
+/* ---------- Videojuego inexistente ---------- */
+.ficha-vacia {
+  max-width: 560px;
+  padding: var(--espacio-6) var(--espacio-5);
+  text-align: center;
+  margin: 0 auto;
+}
+.ficha-vacia p { color: var(--color-text-muted); margin: var(--espacio-3) 0 var(--espacio-5); }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 900px) {
+  .ficha { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .ficha-info { padding: var(--espacio-4); }
+  .ficha-volver { display: block; }
+}
