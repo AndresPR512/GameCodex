@@ -6,20 +6,22 @@
     <title>Ficha de videojuego | GameCodex</title>
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
-    <!-- Agregar css/ficha.css cuando se desarrolle esta sección. -->
+    <link rel="stylesheet" href="css/ficha.css">
     <script src="js/menu.js" defer></script>
-    <!-- Agregar los scripts de esta sección durante su desarrollo. -->
+    <script src="js/juegos.js" defer></script>
+    <script src="js/ficha.js" defer></script>
 </head>
 <body data-pagina="ficha">
     <!-- HU-02: aquí se insertará el menú lateral compartido mediante menu.js. -->
     <nav id="menu-lateral" aria-label="Navegación principal"></nav>
 
-    <main id="contenido-principal">
-        <header>
-            <h1>Ficha de videojuego</h1>
-            <p>Información del videojuego seleccionado.</p>
-        </header>
-        <!-- TODO (HU-09): desarrollar el contenido de esta página. -->
+    <main id="contenido-principal" class="contenido-principal">
+        <div class="contenedor seccion">
+            <a href="catalogo.html" class="btn btn-secundario ficha-volver">Volver al catálogo</a>
+
+            <!-- HU-09: ficha.js dibuja aquí el videojuego según ?id= de la URL. -->
+            <div id="ficha-contenido" aria-live="polite"></div>
+        </div>
     </main>
 
     <!-- Pie de página compartido; se completará junto con HU-02. -->

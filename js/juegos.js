@@ -1,12 +1,14 @@
 // Datos compartidos
 // catálogo, fichas y favoritos.
 // id, nombre, año, género, plataformas, descripción, valoración e imagen.
+// desarrolladora (agregada para la ficha, HU-09).
 
 const juegos = [
   {
     id: 1,
     nombre: "Hollow Knight",
     anio: 2017,
+    desarrolladora: "Team Cherry",
     genero: ["Metroidvania", "Plataformas"],
     plataformas: ["PC", "Switch", "PlayStation", "Xbox"],
     descripcion: "Explora un vasto reino de insectos en ruinas, lleno de secretos y jefes memorables.",
@@ -17,6 +19,7 @@ const juegos = [
     id: 2,
     nombre: "Minecraft",
     anio: 2011,
+    desarrolladora: "Mojang Studios",
     genero: ["Sandbox", "Supervivencia"],
     plataformas: ["PC", "Switch", "PlayStation", "Xbox"],
     descripcion: "Construye, explora y sobrevive en un mundo de bloques generado sin límites.",
@@ -27,6 +30,7 @@ const juegos = [
     id: 3,
     nombre: "Bloons TD 6",
     anio: 2018,
+    desarrolladora: "Ninja Kiwi",
     genero: ["Estrategia", "Defensa de torres"],
     plataformas: ["PC", "Switch", "PlayStation", "Xbox"],
     descripcion: "Coloca torres de monos y combina mejoras para detener oleadas de globos cada vez más resistentes.",
@@ -37,6 +41,7 @@ const juegos = [
     id: 4,
     nombre: "Stardew Valley",
     anio: 2016,
+    desarrolladora: "ConcernedApe",
     genero: ["Simulación", "Rol"],
     plataformas: ["PC", "Switch", "PlayStation", "Xbox"],
     descripcion: "Hereda una granja, cultiva la tierra, haz amistades en el pueblo y explora las cuevas cercanas.",
@@ -47,10 +52,22 @@ const juegos = [
     id: 5,
     nombre: "Slime Rancher",
     anio: 2017,
+    desarrolladora: "Monomi Park",
     genero: ["Aventura", "Simulación"],
     plataformas: ["PC", "Switch", "PlayStation", "Xbox"],
     descripcion: "Cuida y cría slimes de colores en un planeta lejano mientras exploras y amplías tu rancho.",
     valoracion: 4.6,
     imagen: "img/juegos/slime-rancher.jpg"
+  },
+  {
+    id: 6,
+    nombre: "Blasphemous",
+    anio: 2019,
+    desarrolladora: "The Game Kitchen",
+    genero: ["Metroidvania", "Acción"],
+    plataformas: ["PC", "Switch", "PlayStation", "Xbox"],
+    descripcion: "Recorre el sombrío reino de Cvstodia en una aventura de acción brutal, cargada de fe, penitencia y jefes inolvidables.",
+    valoracion: 4.5,
+    imagen: "img/juegos/Blasphemous.jpg"
   }
 ];
