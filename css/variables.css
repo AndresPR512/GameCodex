@@ -1,4 +1,91 @@
-/* DEV-02 — Mario: definir aquí las variables de la guía de estilo aprobada.
-   Incluye --color-bg, --color-primary, --epic-1, etc.
-   Este archivo se crea vacío intencionalmente para no adelantar DEV-02.
-*/
+/* ==========================================================================
+   GameCodex — variables.css
+   Variables globales de la guía de estilo (DEV-02).
+   Regla: no escribir colores, tamaños ni fuentes a mano en otros archivos;
+   usar siempre estas variables con var(--nombre).
+   ========================================================================== */
+
+/* Tipografías (Google Fonts): Orbitron para títulos, Poppins para textos */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;900&family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+  /* ---------- Colores base ---------- */
+  --color-bg: #0B0E1A;            /* fondo principal */
+  --color-surface: #141A2E;       /* tarjetas y barras */
+  --color-surface-2: #1C2440;     /* hover y secciones alternas */
+  --color-border: #2A3358;        /* bordes */
+  --color-primary: #7C3AED;       /* botones y acciones principales */
+  --color-secondary: #22D3EE;     /* enlaces y detalles */
+  --color-accent: #FACC15;        /* estrellas, valoraciones, destacados */
+  --color-text: #F1F5F9;          /* texto principal */
+  --color-text-muted: #94A3B8;    /* texto secundario */
+  --color-success: #34D399;       /* correcto */
+  --color-danger: #F87171;        /* error */
+
+  /* ---------- Colores de las épicas (menú y encabezados) ---------- */
+  --epic-1: #22D3EE;              /* Conocer GameCodex */
+  --epic-2: #3B82F6;              /* Explorar videojuegos */
+  --epic-3: #6366F1;              /* Consultar videojuegos */
+  --epic-4: #8B5CF6;              /* Aprender sobre videojuegos */
+  --epic-5: #A855F7;              /* Descubrir recomendaciones */
+  --epic-6: #EC4899;              /* Participar en la Zona Gamer */
+
+  /* ---------- Colores de fase (reutilizan colores existentes) ---------- */
+  --fase-mvp: var(--color-success);
+  --fase-v2: var(--color-accent);
+  --fase-backlog: var(--color-danger);
+
+  /* ---------- Degradado oficial ---------- */
+  --gradiente: linear-gradient(135deg, #7C3AED, #22D3EE);
+
+  /* ---------- Tipografía ---------- */
+  --font-title: 'Orbitron', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+
+  --text-h1: 2.5rem;
+  --text-h2: 1.8rem;
+  --text-h3: 1.2rem;
+  --text-base: 1rem;
+  --text-sm: 0.85rem;
+  --text-xs: 0.7rem;
+
+  --peso-normal: 400;
+  --peso-medio: 500;
+  --peso-semibold: 600;
+  --peso-bold: 700;
+  --peso-black: 900;
+
+  --interlineado: 1.6;
+
+  /* ---------- Espaciado ---------- */
+  --espacio-1: 0.25rem;
+  --espacio-2: 0.5rem;
+  --espacio-3: 0.75rem;
+  --espacio-4: 1rem;
+  --espacio-5: 1.5rem;
+  --espacio-6: 2rem;
+  --espacio-7: 3rem;
+  --espacio-8: 4rem;
+
+  /* ---------- Bordes, sombras y animación ---------- */
+  --radius: 12px;                 /* tarjetas */
+  --radius-sm: 8px;               /* botones e inputs */
+  --radius-pill: 999px;           /* chips y etiquetas */
+  --borde: 1px solid var(--color-border);
+  --shadow: 0 4px 20px rgba(124, 58, 237, 0.25);
+  --transition: 0.25s ease;
+
+  /* ---------- Layout ---------- */
+  --max-width: 1200px;
+  --sidebar-width: 280px;
+
+  /* ---------- Capas (z-index) ---------- */
+  --z-menu: 80;
+  --z-overlay: 70;
+  --z-modal: 100;
+}
+
+/* Puntos de corte usados en todo el proyecto (las variables CSS no funcionan
+   dentro de @media, por eso se documentan aquí):
+   - 900px: el menú lateral se oculta y aparece el botón de hamburguesa
+   - 600px: celular */
