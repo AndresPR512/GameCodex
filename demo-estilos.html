@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GameCodex — Prueba de estilos base</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="contenedor">
+      <h1>Tu enciclopedia <span class="texto-degradado">gamer</span></h1>
+      <p>Página de prueba de variables.css y base.css.</p>
+      <div class="grupo-botones">
+        <a class="btn btn-primario" href="#catalogo">Botón primario</a>
+        <a class="btn btn-secundario" href="#catalogo">Botón secundario</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="seccion" id="catalogo">
+    <div class="contenedor">
+      <div class="encabezado-seccion">
+        <h2>Catálogo de ejemplo</h2>
+        <p>Texto secundario con un <a href="#">enlace de ejemplo</a>.</p>
+      </div>
+      <div class="herramientas">
+        <input class="buscador" type="search" placeholder="Buscar videojuego…" aria-label="Buscar">
+        <div class="chips">
+          <button class="chip activo">Todos</button>
+          <button class="chip">Aventura</button>
+          <button class="chip">RPG</button>
+        </div>
+      </div>
+      <div class="cuadricula">
+        <article class="tarjeta">
+          <div class="tarjeta-imagen"></div>
+          <div class="tarjeta-cuerpo">
+            <button class="btn-favorito" style="float:right" aria-label="Favorito">♡</button>
+            <h3>Hollow Knight</h3>
+            <div class="etiquetas"><span class="etiqueta">Plataformas</span><span class="etiqueta">2017</span></div>
+            <p>Un reino de insectos en ruinas lleno de secretos.</p>
+            <span class="valoracion">★★★★★</span>
+          </div>
+        </article>
+        <article class="tarjeta">
+          <div class="tarjeta-imagen"></div>
+          <div class="tarjeta-cuerpo">
+            <button class="btn-favorito activo" style="float:right" aria-label="Favorito">♥</button>
+            <h3>Stardew Valley</h3>
+            <div class="etiquetas"><span class="etiqueta">Simulación</span><span class="etiqueta">2016</span></div>
+            <p>Hereda una granja y construye una vida tranquila.</p>
+            <span class="valoracion">★★★★★</span>
+          </div>
+        </article>
+        <article class="tarjeta tarjeta-fija">
+          <div class="tarjeta-cuerpo">
+            <h3>Fases</h3>
+            <div class="etiquetas">
+              <span class="etiqueta-fase etiqueta-mvp">MVP</span>
+              <span class="etiqueta-fase etiqueta-v2">V2</span>
+              <span class="etiqueta-fase etiqueta-backlog">Backlog</span>
+            </div>
+            <label for="n">Campo de texto</label>
+            <input id="n" type="text" placeholder="Escribe aquí">
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
