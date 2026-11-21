@@ -3,24 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GameCodex, tu enciclopedia gamer: catálogo de videojuegos, géneros, consolas, recomendaciones y trivia.">
     <title>Inicio | GameCodex</title>
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/menu.css">
-    <!-- Agregar css/index.css cuando se desarrolle esta sección. -->
+    <link rel="stylesheet" href="css/index.css">
     <script src="js/menu.js" defer></script>
-    <!-- Agregar los scripts de esta sección durante su desarrollo. -->
 </head>
 <body data-pagina="index">
     <!-- HU-02: aquí se insertará el menú lateral compartido mediante menu.js. -->
     <nav id="menu-lateral" aria-label="Navegación principal"></nav>
 
     <main id="contenido-principal">
-        <header>
-            <h1>Inicio</h1>
-            <p>Presentación de GameCodex y acceso a sus secciones.</p>
-        </header>
-        <!-- TODO (HU-01): desarrollar el contenido de esta página. -->
+
+        <!-- Bienvenida -->
+        <section class="hero inicio-hero" aria-labelledby="inicio-titulo">
+            <div class="contenedor inicio-hero-contenido">
+                <div>
+                    <span class="inicio-marca">Game<span>Codex</span></span>
+                    <h1 id="inicio-titulo">Tu enciclopedia <span class="texto-degradado">gamer</span></h1>
+                    <p class="inicio-descripcion">Descubre videojuegos, aprende sobre géneros y consolas y encuentra tu próxima partida. Todo lo que quieres saber de gaming, en un solo lugar.</p>
+                    <div class="grupo-botones">
+                        <a class="btn btn-primario" href="catalogo.html">Explorar el catálogo</a>
+                        <a class="btn btn-secundario" href="generos.html">Descubrir géneros</a>
+                    </div>
+                </div>
+
+                <!-- Portadas decorativas -->
+                <div class="inicio-collage" aria-hidden="true">
+                    <img class="inicio-portada inicio-portada-1" src="img/juegos/grand-theft-auto-vi.jpg" alt="" width="1280" height="720" decoding="async">
+                    <img class="inicio-portada inicio-portada-2" src="img/juegos/minecraft.jpg" alt="" width="1280" height="720" decoding="async">
+                    <img class="inicio-portada inicio-portada-3" src="img/juegos/the-legend-of-zelda-ocarina-of-time-2026.jpg" alt="" width="1280" height="720" decoding="async">
+                </div>
+            </div>
+        </section>
+
+        <!-- Qué es GameCodex -->
+        <section class="seccion seccion-alterna" id="que-es" aria-labelledby="inicio-que-es">
+            <div class="contenedor inicio-presentacion">
+                <div>
+                    <h2 id="inicio-que-es">Una enciclopedia pensada para jugadores</h2>
+                    <p>GameCodex reúne en un solo sitio lo que buscas sobre videojuegos: qué títulos existen, de qué trata cada uno, en qué consolas se juega y cuáles vale la pena probar.</p>
+                    <p>Sin registros ni complicaciones: entras y empiezas a explorar.</p>
+                </div>
+
+                <ul class="inicio-pilares">
+                    <li class="inicio-pilar">
+                        <span class="inicio-icono" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                        </span>
+                        <div>
+                            <h3>Descubre</h3>
+                            <p>Un catálogo de videojuegos con la ficha detallada de cada título.</p>
+                        </div>
+                    </li>
+                    <li class="inicio-pilar">
+                        <span class="inicio-icono" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2V5Z"/><path d="M8 7h8"/></svg>
+                        </span>
+                        <div>
+                            <h3>Aprende</h3>
+                            <p>Géneros, consolas y plataformas explicados de forma clara.</p>
+                        </div>
+                    </li>
+                    <li class="inicio-pilar">
+                        <span class="inicio-icono" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="11" rx="5"/><path d="M7 10.5v4M5 12.5h4"/><path d="M16 11.5h.01M18.5 14h.01"/></svg>
+                        </span>
+                        <div>
+                            <h3>Juega</h3>
+                            <p>Recomendaciones y una trivia para poner a prueba lo que sabes.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- HU-03: aquí puede añadirse la sección de videojuegos destacados
+             (un <section class="seccion"> nuevo, sin modificar el resto de la página). -->
+
+        <!-- Secciones principales -->
+        <section class="seccion" id="explorar" aria-labelledby="inicio-explorar">
+            <div class="contenedor">
+                <div class="encabezado-seccion">
+                    <h2 id="inicio-explorar">Explora GameCodex</h2>
+                    <p>Elige por dónde empezar: cinco secciones para descubrir, aprender y jugar.</p>
+                </div>
+
+                <div class="inicio-secciones">
+                    <article class="tarjeta inicio-seccion inicio-seccion-principal inicio-seccion-catalogo">
+                        <span class="inicio-icono" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+                        </span>
+                        <h3><a href="catalogo.html">Catálogo de videojuegos</a></h3>
+                        <p>Recorre todos los títulos, busca por nombre y filtra por género o plataforma hasta encontrar el que buscas.</p>
+                        <span class="inicio-seccion-guia" aria-hidden="true">Ver el catálogo</span>
+                    </article>
+
+                    <article class="tarjeta inicio-seccion inicio-seccion-generos">
+                        <span class="inicio-icono" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/></svg>
+                        </span>
+                        <h3><a href="generos.html">Géneros</a></h3>
+                        <p>Acción, aventura, rol y más: descubre qué estilo de juego va contigo.</p>
+                        <span class="inicio-seccion-guia" aria-hidden="true">Ver géneros</span>
+                    </article>
+
+                    <article class="tarjeta inicio-seccion inicio-seccion-consolas">
+                        <span class="inicio-icono" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+                        </span>
+                        <h3><a href="consolas.html">Consolas y plataformas</a></h3>
+                        <p>Conoce dónde puedes jugar tus títulos favoritos.</p>
+                        <span class="inicio-seccion-guia" aria-hidden="true">Ver plataformas</span>
+                    </article>
+
+                    <article class="tarjeta inicio-seccion inicio-seccion-recomendaciones">
+                        <span class="inicio-icono" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z"/></svg>
+                        </span>
+                        <h3><a href="recomendaciones.html">Tops y recomendaciones</a></h3>
+                        <p>Encuentra qué jugar después, para cada gusto.</p>
+                        <span class="inicio-seccion-guia" aria-hidden="true">Ver recomendaciones</span>
+                    </article>
+
+                    <article class="tarjeta inicio-seccion inicio-seccion-zona">
+                        <span class="inicio-icono" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.6 2.2c-.7.4-1.1.9-1.1 1.8"/><path d="M12 17h.01"/></svg>
+                        </span>
+                        <h3><a href="trivia.html">Zona Gamer</a></h3>
+                        <p>Demuestra cuánto sabes en la trivia gamer.</p>
+                        <span class="inicio-seccion-guia" aria-hidden="true">Jugar la trivia</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Invitación final -->
+        <section class="seccion" id="comenzar" aria-labelledby="inicio-comenzar">
+            <div class="contenedor">
+                <div class="inicio-cierre">
+                    <h2 id="inicio-comenzar">Tu próximo juego favorito te está esperando</h2>
+                    <p>Entra al catálogo y empieza a explorar, o pon a prueba tus conocimientos en la Zona Gamer.</p>
+                    <div class="grupo-botones">
+                        <a class="btn btn-primario" href="catalogo.html">Abrir el catálogo</a>
+                        <a class="btn btn-secundario" href="trivia.html">Jugar la trivia</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Pie de página compartido; se completará junto con HU-02. -->
