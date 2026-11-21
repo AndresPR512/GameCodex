@@ -4,22 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Géneros de videojuegos | GameCodex</title>
+    <meta name="description" content="Conoce los principales géneros de videojuegos: sus características, mecánicas y ejemplos del catálogo de GameCodex.">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
-    <!-- Agregar css/generos.css cuando se desarrolle esta sección. -->
+    <link rel="stylesheet" href="css/generos.css">
     <script src="js/menu.js" defer></script>
-    <!-- Agregar los scripts de esta sección durante su desarrollo. -->
+    <script src="js/juegos.js" defer></script>
+    <script src="js/generos.js" defer></script>
 </head>
 <body data-pagina="generos">
     <!-- HU-02: aquí se insertará el menú lateral compartido mediante menu.js. -->
     <nav id="menu-lateral" aria-label="Navegación principal"></nav>
 
-    <main id="contenido-principal">
-        <header>
-            <h1>Géneros de videojuegos</h1>
-            <p>Información sobre los principales géneros.</p>
+    <main id="contenido-principal" class="contenido-principal">
+        <!-- HU-13: encabezado de la página -->
+        <header class="hero generos-hero">
+            <div class="contenedor">
+                <span class="generos-epica">Aprender sobre videojuegos</span>
+                <h1>Géneros de <span class="texto-degradado">videojuegos</span></h1>
+                <p>Cada género tiene su propia forma de jugar. Descubre en qué consiste cada uno, sus mecánicas principales y juegos que lo representan.</p>
+            </div>
         </header>
-        <!-- TODO (HU-13): desarrollar el contenido de esta página. -->
+
+        <section class="seccion" aria-labelledby="titulo-generos">
+            <div class="contenedor">
+                <div class="encabezado-seccion">
+                    <h2 id="titulo-generos">Explora por género</h2>
+                    <p>Usa los filtros para ver un género en particular.</p>
+                </div>
+
+                <!-- Filtros: generos.js crea un chip por género -->
+                <div id="generos-filtros" class="chips generos-filtros" role="group" aria-label="Filtrar géneros"></div>
+
+                <!-- Mensaje para lectores de pantalla al filtrar -->
+                <p id="generos-estado" class="sr-only" aria-live="polite"></p>
+
+                <!-- Tarjetas: generos.js dibuja aquí cada género -->
+                <div id="generos-lista" class="cuadricula generos-lista"></div>
+            </div>
+        </section>
     </main>
 
     <!-- Pie de página compartido; se completará junto con HU-02. -->
