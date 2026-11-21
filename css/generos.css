@@ -1,0 +1,216 @@
+/* ==========================================================================
+   GameCodex — generos.css (HU-13)
+   Solo estilos propios de la página de géneros. Lo común está en base.css.
+   Todos los valores salen de variables.css.
+   ========================================================================== */
+
+/* ---------- 1. Banner (hero) con brillo animado ---------- */
+.generos-hero {
+  position: relative;
+  overflow: hidden;
+  border-bottom: var(--borde);
+}
+
+/* Franja de luz que cruza el banner lentamente */
+.generos-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    color-mix(in srgb, var(--epic-4) 18%, transparent) 50%,
+    transparent 70%
+  );
+  background-size: 250% 100%;
+  animation: generos-brillo 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.generos-hero .contenedor { position: relative; z-index: 1; }
+
+/* Etiqueta de la épica "Aprender sobre videojuegos" */
+.generos-epica {
+  display: inline-block;
+  margin-bottom: var(--espacio-4);
+  padding: var(--espacio-1) var(--espacio-3);
+  border: 1px solid var(--epic-4);
+  border-radius: var(--radius-pill);
+  color: var(--epic-4);
+  font-size: var(--text-xs);
+  font-weight: var(--peso-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ---------- 2. Filtros ---------- */
+.generos-filtros { margin-bottom: var(--espacio-6); }
+.generos-filtros .chip { transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; }
+
+/* ---------- 3. Tarjeta de género ---------- */
+.genero-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  scroll-margin-top: var(--espacio-6); /* para generos.html#rol */
+  /* Estado inicial de la animación de entrada */
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease,
+    box-shadow var(--transition),
+    background var(--transition);
+}
+
+/* Se activa con IntersectionObserver (generos.js) */
+.genero-card.visible { opacity: 1; transform: translateY(0); }
+.genero-card.visible:hover { transform: translateY(-6px); }
+
+/* Borde superior con degradado que se desplaza */
+.genero-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 2;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--epic-4), var(--color-primary));
+  background-size: 300% 100%;
+  animation: generos-borde 6s linear infinite;
+}
+
+/* Tarjeta destacada al llegar con #ancla */
+.genero-card.destacada { border-color: var(--epic-4); box-shadow: var(--shadow); }
+
+/* Portada: imagen del primer juego o degradado con el nombre */
+.genero-portada {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--gradiente);
+}
+
+.genero-portada img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.genero-card:hover .genero-portada img { transform: scale(1.08); }
+
+/* Oscurece la parte baja para que el texto se lea bien */
+.genero-portada::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--color-surface), transparent 60%);
+}
+
+/* Sin imagen: el nombre del género aparece sobre el degradado */
+.genero-portada-nombre { display: none; }
+.genero-portada.sin-imagen::after { display: none; }
+.genero-portada.sin-imagen .genero-portada-nombre {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-title);
+  font-size: var(--text-h2);
+  font-weight: var(--peso-black);
+  color: var(--color-text);
+}
+
+.genero-card .tarjeta-cuerpo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--espacio-3);
+}
+.genero-card .tarjeta-cuerpo p { margin: 0; }
+
+/* Subtítulos internos (Características, Ejemplos) */
+.genero-subtitulo {
+  font-family: var(--font-title);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--epic-4);
+}
+
+/* Lista de características con viñeta personalizada */
+.genero-caracteristicas { display: grid; gap: var(--espacio-1); font-size: var(--text-sm); }
+.genero-caracteristicas li { position: relative; padding-left: var(--espacio-4); }
+.genero-caracteristicas li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--color-secondary);
+}
+
+.genero-ejemplos { margin-bottom: 0; }
+.genero-ejemplos a.etiqueta:hover { color: var(--color-text); text-decoration: none; background: var(--color-primary); }
+.etiqueta-vacia { color: var(--color-text-muted); }
+
+.genero-card .btn { margin-top: auto; }
+
+/* Cantidad de juegos del género, sobre la portada */
+.genero-contador {
+  position: absolute;
+  right: var(--espacio-3);
+  bottom: var(--espacio-3);
+  z-index: 1;
+  padding: 2px var(--espacio-3);
+  border-radius: var(--radius-pill);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: var(--text-xs);
+  font-weight: var(--peso-semibold);
+}
+
+/* Botón "Ver los N juegos" (aparece cuando hay muchos) */
+.genero-mas {
+  align-self: flex-start;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: var(--color-secondary);
+  font-size: var(--text-sm);
+  font-weight: var(--peso-medio);
+}
+.genero-mas:hover { text-decoration: underline; }
+
+/* ---------- 4. Aparición al filtrar ---------- */
+.genero-card.aparecer { animation: generos-aparecer 0.4s ease both; }
+
+/* ---------- 5. Animaciones ---------- */
+@keyframes generos-brillo {
+  0%, 100% { background-position: 100% 0; }
+  50% { background-position: 0 0; }
+}
+@keyframes generos-borde {
+  to { background-position: 300% 0; }
+}
+@keyframes generos-aparecer {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ---------- 6. Responsivo ---------- */
+@media (max-width: 600px) {
+  .generos-lista { grid-template-columns: 1fr; }
+  .generos-filtros { margin-bottom: var(--espacio-5); }
+}
+
+/* ---------- 7. Movimiento reducido: sin animaciones ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .generos-hero::after,
+  .genero-card::before,
+  .genero-card.aparecer { animation: none; }
+  .genero-card,
+  .genero-card.visible,
+  .genero-card.visible:hover { opacity: 1; transform: none; transition: none; }
+  .genero-portada img,
+  .genero-card:hover .genero-portada img { transform: none; transition: none; }
+}
