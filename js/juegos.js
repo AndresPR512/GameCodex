@@ -68,7 +68,7 @@ const juegos = [
     plataformas: ["PC", "Switch", "PlayStation", "Xbox"],
     descripcion: "Recorre el sombrío reino de Cvstodia en una aventura de acción brutal, cargada de fe, penitencia y jefes inolvidables.",
     valoracion: 4.5,
-    imagen: "img/juegos/Blasphemous.jpg"
+    imagen: "img/juegos/blasphemous.jpg"
   },
   {
     id: 7,
