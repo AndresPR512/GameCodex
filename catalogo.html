@@ -3,25 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explora el catálogo de videojuegos de GameCodex: portadas, géneros y plataformas de cada título.">
     <title>Catálogo de videojuegos | GameCodex</title>
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/menu.css">
-    <!-- Agregar css/catalogo.css cuando se desarrolle esta sección. -->
+    <link rel="stylesheet" href="css/catalogo.css">
     <script src="js/menu.js" defer></script>
     <script src="js/juegos.js" defer></script>
-    <!-- Agregar los scripts de esta sección durante su desarrollo. -->
+    <script src="js/catalogo.js" defer></script>
 </head>
 <body data-pagina="catalogo">
     <!-- HU-02: aquí se insertará el menú lateral compartido mediante menu.js. -->
     <nav id="menu-lateral" aria-label="Navegación principal"></nav>
 
-    <main id="contenido-principal">
-        <header>
-            <h1>Catálogo de videojuegos</h1>
-            <p>Listado de videojuegos del proyecto.</p>
+    <main id="contenido-principal" class="contenido-principal">
+        <!-- HU-04: encabezado de la página -->
+        <header class="hero catalogo-hero">
+            <div class="contenedor">
+                <span class="catalogo-epica">Explorar videojuegos</span>
+                <h1>Catálogo de <span class="texto-degradado">videojuegos</span></h1>
+                <p>Descubre títulos de todos los géneros y plataformas. Pulsa una tarjeta para ver la ficha completa del juego.</p>
+            </div>
         </header>
-        <!-- TODO (HU-04): desarrollar el contenido de esta página. -->
+
+        <section class="seccion" aria-labelledby="titulo-catalogo">
+            <div class="contenedor">
+                <div class="encabezado-seccion">
+                    <h2 id="titulo-catalogo">Todos los videojuegos</h2>
+                    <p id="catalogo-contador" aria-live="polite"></p>
+                </div>
+
+                <!-- Tarjetas: catalogo.js dibuja aquí cada videojuego -->
+                <div id="catalogo-lista" class="cuadricula catalogo-lista"></div>
+            </div>
+        </section>
     </main>
 
     <!-- Pie de página compartido; se completará junto con HU-02. -->
