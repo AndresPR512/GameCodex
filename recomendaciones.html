@@ -3,24 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tops y recomendaciones editoriales del equipo de GameCodex: favoritos, juegos para jugar con amigos, buenas historias y más.">
     <title>Tops y recomendaciones | GameCodex</title>
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/menu.css">
-    <!-- Agregar css/recomendaciones.css cuando se desarrolle esta sección. -->
+    <link rel="stylesheet" href="css/recomendaciones.css">
     <script src="js/menu.js" defer></script>
-    <!-- Agregar los scripts de esta sección durante su desarrollo. -->
+    <script src="js/juegos.js" defer></script>
+    <script src="js/recomendaciones-datos.js" defer></script>
+    <script src="js/recomendaciones.js" defer></script>
 </head>
 <body data-pagina="recomendaciones">
     <!-- HU-02: aquí se insertará el menú lateral compartido mediante menu.js. -->
     <nav id="menu-lateral" aria-label="Navegación principal"></nav>
 
-    <main id="contenido-principal">
-        <header>
-            <h1>Tops y recomendaciones</h1>
-            <p>Recomendaciones y selecciones del equipo.</p>
+    <main id="contenido-principal" class="contenido-principal">
+        <!-- HU-16: encabezado de la página -->
+        <header class="hero reco-hero">
+            <div class="contenedor">
+                <span class="reco-epica">Descubrir recomendaciones</span>
+                <h1>Tops y <span class="texto-degradado">recomendaciones</span></h1>
+                <p>Selecciones del equipo de GameCodex para encontrar tu próximo videojuego favorito. Pulsa una tarjeta para ver la ficha completa.</p>
+            </div>
         </header>
-        <!-- TODO (HU-16): desarrollar el contenido de esta página. -->
+
+        <section class="seccion reco-intro" aria-label="Sobre estas recomendaciones">
+            <div class="contenedor">
+                <aside class="reco-aviso">
+                    <p><strong>Recomendaciones editoriales.</strong> Estas listas reflejan las opiniones y los gustos del equipo de GameCodex. No son rankings oficiales ni clasificaciones de ninguna organización.</p>
+                </aside>
+
+                <!-- Chips de acceso rápido: recomendaciones.js los dibuja aquí -->
+                <nav id="reco-nav" aria-label="Categorías de recomendaciones"></nav>
+            </div>
+        </section>
+
+        <!-- Secciones de cada top: recomendaciones.js las dibuja aquí -->
+        <div id="reco-lista" aria-live="polite"></div>
     </main>
 
     <!-- Pie de página compartido; se completará junto con HU-02. -->
