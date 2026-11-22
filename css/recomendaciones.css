@@ -1,0 +1,146 @@
+/* ==========================================================================
+   GameCodex — recomendaciones.css (HU-16)
+   Solo estilos propios de la página de tops y recomendaciones.
+   Lo común está en base.css. Todos los valores salen de variables.css.
+   ========================================================================== */
+
+/* ---------- 1. Encabezado ---------- */
+.reco-hero { border-bottom: var(--borde); }
+
+/* Etiqueta de la épica "Descubrir recomendaciones" */
+.reco-epica {
+  display: inline-block;
+  margin-bottom: var(--espacio-4);
+  padding: var(--espacio-1) var(--espacio-3);
+  border: 1px solid var(--epic-5);
+  border-radius: var(--radius-pill);
+  color: var(--epic-5);
+  font-size: var(--text-xs);
+  font-weight: var(--peso-semibold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ---------- 2. Aviso editorial y acceso rápido ---------- */
+.reco-intro { padding-bottom: 0; }
+
+.reco-aviso {
+  display: flex;
+  gap: var(--espacio-3);
+  align-items: flex-start;
+  margin-bottom: var(--espacio-5);
+  padding: var(--espacio-4);
+  background: var(--color-surface);
+  border: var(--borde);
+  border-left: 4px solid var(--epic-5);
+  border-radius: var(--radius);
+}
+.reco-aviso p { margin: 0; font-size: var(--text-sm); color: var(--color-text-muted); }
+.reco-aviso strong { color: var(--color-text); }
+
+.reco-chip { text-decoration: none; }
+.reco-chip:hover { text-decoration: none; }
+
+/* ---------- 3. Secciones de cada top ---------- */
+.reco-seccion { scroll-margin-top: var(--espacio-4); }
+.reco-seccion:nth-of-type(even) {
+  background: var(--color-surface);
+  border-top: var(--borde);
+  border-bottom: var(--borde);
+}
+
+.reco-grupo { list-style: none; padding: 0; }
+.reco-item { display: flex; }
+.reco-item .reco-tarjeta { width: 100%; }
+
+/* ---------- 4. Tarjeta de juego recomendado ---------- */
+.reco-tarjeta {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.reco-portada { position: relative; }
+
+.reco-sin-imagen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  background: var(--color-surface-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+/* Número de posición sobre la portada (solo en los tops) */
+.reco-posicion {
+  position: absolute;
+  top: var(--espacio-3);
+  left: var(--espacio-3);
+  min-width: 2.5rem;
+  padding: var(--espacio-1) var(--espacio-3);
+  background: var(--color-primary);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+  color: #fff;
+  font-family: var(--font-title);
+  font-size: var(--text-h3);
+  font-weight: var(--peso-black);
+  text-align: center;
+}
+
+.reco-cuerpo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: var(--espacio-3);
+}
+
+.reco-titulo { margin: 0; }
+
+/* Todo el cuadro de la tarjeta es clicable gracias al enlace del título */
+.reco-titulo a { color: var(--color-text); }
+.reco-titulo a:hover { text-decoration: none; color: var(--color-secondary); }
+.reco-titulo a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+/* El foco se marca en toda la tarjeta, no solo en el título */
+.reco-titulo a:focus-visible { outline: none; }
+.reco-tarjeta:focus-within {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.2);
+}
+
+.reco-cuerpo .etiquetas { margin-bottom: 0; }
+
+/* Opinión del equipo */
+.reco-cuerpo .reco-motivo {
+  margin: 0;
+  color: var(--color-text);
+  font-size: var(--text-base);
+}
+
+.reco-cuerpo .reco-autor {
+  margin: auto 0 0;
+  padding-top: var(--espacio-3);
+  border-top: var(--borde);
+  color: var(--color-accent);
+  font-size: var(--text-sm);
+  font-weight: var(--peso-medio);
+}
+
+/* ---------- 5. Mensajes de estado ---------- */
+.reco-estado {
+  padding: var(--espacio-6);
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+/* ---------- 6. Responsivo ---------- */
+@media (max-width: 600px) {
+  .reco-aviso { padding: var(--espacio-3); }
+  .reco-posicion { font-size: var(--text-base); }
+}
