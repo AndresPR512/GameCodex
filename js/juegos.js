@@ -941,25 +941,25 @@ const juegos = [
   },
   {
     id: 86,
-    nombre: "God of War III",
-    anio: 2010,
-    desarrolladora: "Santa Monica Studio",
-    genero: ["Acción", "Aventura", "Hack and Slash"],
-    plataformas: ["PlayStation 3", "PlayStation 4"],
-    descripcion: "Acompaña a Kratos en su búsqueda de venganza contra los dioses del Olimpo mientras escala el Monte Olimpo y enfrenta a poderosos enemigos de la mitología griega.",
-    valoracion: 4.9,
-    imagen: "img/juegos/god-of-war-iii.jpg"
+    nombre: "PEAK",
+    anio: 2025,
+    desarrolladora: "Aggro Crab y Landfall",
+    genero: ["Aventura", "Supervivencia", "Cooperativo"],
+    plataformas: ["PC"],
+    descripcion: "Escala una montaña generada de forma procedural junto a tus amigos. Administra tu resistencia, encuentra suministros y supera obstáculos para llegar a la cima.",
+    valoracion: 4.8,
+    imagen: "img/juegos/peak.jpg"
   },
   {
     id: 87,
-    nombre: "God of War Ragnarök",
-    anio: 2022,
-    desarrolladora: "Santa Monica Studio",
-    genero: ["Acción", "Aventura", "Rol"],
-    plataformas: ["PlayStation 4", "PlayStation 5", "PC"],
-    descripcion: "Kratos y Atreus recorren los Nueve Reinos mientras se preparan para el Ragnarök y enfrentan a dioses y criaturas de la mitología nórdica.",
-    valoracion: 4.9,
-    imagen: "img/juegos/god-of-war-ragnarok.jpg"
+    nombre: "R.E.P.O.",
+    anio: 2025,
+    desarrolladora: "semiwork",
+    genero: ["Terror", "Supervivencia", "Cooperativo"],
+    plataformas: ["PC"],
+    descripcion: "Forma un equipo de hasta seis jugadores para explorar lugares abandonados, recolectar objetos valiosos y escapar de criaturas peligrosas mientras cumples misiones de extracción.",
+    valoracion: 4.8,
+    imagen: "img/juegos/repo.jpg"
   },
   {
     id: 88,
