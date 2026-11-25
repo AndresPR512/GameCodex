@@ -87,6 +87,9 @@ const aliasGeneros = {
 /* Cuántos juegos se muestran antes del botón "Ver todos" */
 const MAX_EJEMPLOS = 8;
 
+/* Cada cuántos milisegundos cambia la portada de cada género */
+const INTERVALO_PORTADA = 5000;
+
 /* ---------- 2. Referencias al HTML ---------- */
 const contenedorFiltros = document.getElementById("generos-filtros");
 const contenedorLista = document.getElementById("generos-lista");
@@ -153,6 +156,67 @@ function armarGeneros() {
   return lista;
 }
 
+/* ---------- 3b. Portada rotativa ----------
+   Cada tarjeta muestra un juego al azar de su género y, cada INTERVALO_PORTADA,
+   cambia a otro distinto. Si el género tiene un solo juego, la portada queda fija. */
+const portadasRotativas = [];
+
+/* Elige un juego al azar que no sea el que ya se está mostrando */
+function elegirJuego(candidatos, actual) {
+  if (candidatos.length === 1) return candidatos[0];
+  let nuevo;
+  do {
+    nuevo = candidatos[Math.floor(Math.random() * candidatos.length)];
+  } while (nuevo === actual);
+  return nuevo;
+}
+
+/* Muestra la imagen de un juego con un fundido suave sobre la anterior */
+function mostrarPortada(estado, juego) {
+  estado.cambiando = true;
+
+  const imagen = document.createElement("img");
+  imagen.alt = "Portada de " + juego.nombre + ", ejemplo del género " + estado.genero.nombre;
+  // Solo la primera imagen es "lazy"; las siguientes se piden cuando la tarjeta ya está a la vista
+  if (!estado.juego) imagen.loading = "lazy";
+
+  imagen.addEventListener("load", function () {
+    const anterior = estado.portada.querySelector("img.activa");
+    estado.juego = juego;
+    estado.nombreJuego.textContent = juego.nombre;
+
+    // Reinicia la animación de entrada del nombre del juego
+    estado.nombreJuego.classList.remove("entra");
+    void estado.nombreJuego.offsetWidth;
+    estado.nombreJuego.classList.add("entra");
+
+    // Forzamos el estado inicial antes de activar, para que el fundido y el zoom se vean
+    void imagen.offsetWidth;
+    imagen.classList.add("activa");
+    if (anterior) {
+      anterior.classList.remove("activa");
+      // Esperamos a que termine el fundido antes de quitarla
+      setTimeout(function () { anterior.remove(); }, 800);
+    }
+    estado.cambiando = false;
+  });
+
+  // Si la imagen falla, se descarta ese juego y se prueba con otro
+  imagen.addEventListener("error", function () {
+    imagen.remove();
+    estado.cambiando = false;
+    estado.candidatos = estado.candidatos.filter(function (j) { return j !== juego; });
+    if (estado.candidatos.length === 0) {
+      estado.portada.classList.add("sin-imagen");
+    } else if (!estado.portada.querySelector("img.activa")) {
+      mostrarPortada(estado, elegirJuego(estado.candidatos, null));
+    }
+  });
+
+  imagen.src = juego.imagen;
+  estado.portada.appendChild(imagen);
+}
+
 /* ---------- 4. Crear una tarjeta ---------- */
 function crearTarjeta(genero) {
   const lista = genero.juegos;
@@ -161,27 +225,35 @@ function crearTarjeta(genero) {
   tarjeta.id = genero.id;
   tarjeta.dataset.genero = genero.id;
 
-  // Portada: imagen del primer juego con imagen, o el degradado con el nombre del género
+  // Portada: un juego al azar del género (cambia cada 5 s, ver sección 3b)
   const portada = crear("div", "genero-portada");
   const nombrePortada = crear("span", "genero-portada-nombre", genero.nombre);
   nombrePortada.setAttribute("aria-hidden", "true");
-  const primero = lista.find(function (juego) { return juego.imagen; });
+  portada.appendChild(nombrePortada);
 
-  if (primero) {
-    const imagen = document.createElement("img");
-    imagen.src = primero.imagen;
-    imagen.alt = "Portada de " + primero.nombre + ", ejemplo del género " + genero.nombre;
-    imagen.loading = "lazy";
-    // Si la imagen falla, la quitamos y queda el degradado
-    imagen.addEventListener("error", function () {
-      imagen.remove();
-      portada.classList.add("sin-imagen");
-    });
-    portada.appendChild(imagen);
+  // Nombre del videojuego que se está mostrando
+  const nombreJuego = crear("span", "genero-juego");
+  portada.appendChild(nombreJuego);
+
+  const candidatos = lista.filter(function (juego) { return juego.imagen; });
+  const estado = {
+    tarjeta: tarjeta, portada: portada, nombreJuego: nombreJuego, genero: genero,
+    candidatos: candidatos, juego: null, pausado: false, cambiando: false
+  };
+
+  if (candidatos.length > 0) {
+    mostrarPortada(estado, elegirJuego(candidatos, null));
+    // Solo rota si hay más de un juego; con uno la imagen queda fija
+    if (candidatos.length > 1) portadasRotativas.push(estado);
   } else {
     portada.classList.add("sin-imagen");
   }
-  portada.appendChild(nombrePortada);
+
+  // La portada se detiene mientras el usuario tiene el mouse o el foco en la tarjeta
+  tarjeta.addEventListener("mouseenter", function () { estado.pausado = true; });
+  tarjeta.addEventListener("mouseleave", function () { estado.pausado = false; });
+  tarjeta.addEventListener("focusin", function () { estado.pausado = true; });
+  tarjeta.addEventListener("focusout", function () { estado.pausado = false; });
 
   // Cantidad de juegos del género en el catálogo
   const textoCantidad = lista.length === 1 ? "1 juego" : lista.length + " juegos";
@@ -264,6 +336,24 @@ if ("IntersectionObserver" in window && !reducirMovimiento) {
   }, { threshold: 0.15 });
 }
 
+/* ---------- 5b. Cambio automático de portadas ---------- */
+function rotarPortadas() {
+  // No cambiar si la pestaña está en segundo plano
+  if (document.hidden) return;
+
+  portadasRotativas.forEach(function (estado, i) {
+    const tarjeta = estado.tarjeta;
+    // Solo cambian las tarjetas visibles (no filtradas ni fuera de pantalla) y sin interacción
+    if (estado.pausado || estado.cambiando || estado.candidatos.length < 2) return;
+    if (tarjeta.classList.contains("oculto") || !tarjeta.classList.contains("visible")) return;
+
+    // Pequeño desfase para que no cambien todas a la vez
+    setTimeout(function () {
+      mostrarPortada(estado, elegirJuego(estado.candidatos, estado.juego));
+    }, (i % 6) * 250);
+  });
+}
+
 /* ---------- 6. Filtro con chips ---------- */
 function crearChip(texto, valor) {
   const chip = crear("button", "chip", texto);
@@ -327,6 +417,9 @@ function iniciar() {
   });
 
   filtrar("todos", false);
+
+  // Con movimiento reducido las portadas no cambian solas: queda un juego al azar fijo
+  if (!reducirMovimiento) setInterval(rotarPortadas, INTERVALO_PORTADA);
 
   // Soporte para generos.html#rol: ir directo a ese género
   const ancla = decodeURIComponent(window.location.hash.slice(1));
