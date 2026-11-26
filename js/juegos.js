@@ -1302,7 +1302,7 @@ const juegos = [
     nombre: "BOMBANANA!",
     anio: 2026,
     desarrolladora: "Lefto Studio",
-    genero: ["Cooperativo","Puzzle","Casual","Multijugador"],
+    genero: ["Cooperativo","Puzles","Casual","Multijugador"],
     plataformas: ["PC","Roblox"],
     descripcion: "Trabaja en equipo con otros jugadores para desactivar bombas. Cada participante tiene habilidades y limitaciones diferentes, por lo que deberán comunicarse y resolver acertijos antes de que termine el tiempo.",
     valoracion: 4.8,
