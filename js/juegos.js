@@ -1307,5 +1307,126 @@ const juegos = [
     descripcion: "Trabaja en equipo con otros jugadores para desactivar bombas. Cada participante tiene habilidades y limitaciones diferentes, por lo que deberán comunicarse y resolver acertijos antes de que termine el tiempo.",
     valoracion: 4.8,
     imagen: "img/juegos/bombanana.jpg"
+  },
+  {
+    id: 120,
+    nombre: "Dragon City",
+    anio: 2012,
+    desarrolladora: "Social Point",
+    genero: ["Simulación","Estrategia","Casual"],
+    plataformas: ["Android","iOS"],
+    descripcion: "Cría y alimenta dragones de distintos elementos, construye tu propia ciudad y enfréntate a otros jugadores en combates por turnos.",
+    valoracion: 4.4,
+    imagen: "img/juegos/dragon-city.jpg"
+  },
+  {
+    id: 121,
+    nombre: "Fruit Ninja",
+    anio: 2010,
+    desarrolladora: "Halfbrick Studios",
+    genero: ["Arcade","Casual","Acción"],
+    plataformas: ["Android","iOS"],
+    descripcion: "Desliza el dedo por la pantalla para cortar frutas voladoras, evita las bombas y consigue combos para lograr la mayor puntuación posible.",
+    valoracion: 4.5,
+    imagen: "img/juegos/fruit-ninja.jpg"
+  },
+  {
+    id: 122,
+    nombre: "Subway Surfers",
+    anio: 2012,
+    desarrolladora: "SYBO Games y Kiloo",
+    genero: ["Endless Runner","Arcade","Acción"],
+    plataformas: ["Android","iOS"],
+    descripcion: "Corre por las vías del tren, esquiva obstáculos y trenes en movimiento, recoge monedas y desbloquea nuevos personajes y tablas.",
+    valoracion: 4.6,
+    imagen: "img/juegos/subway-surfers.jpg"
+  },
+  {
+    id: 123,
+    nombre: "Temple Run",
+    anio: 2011,
+    desarrolladora: "Imangi Studios",
+    genero: ["Endless Runner","Arcade","Aventura"],
+    plataformas: ["Android","iOS"],
+    descripcion: "Escapa de un templo antiguo con un ídolo robado, salta, desliza y gira para esquivar trampas mientras algo te persigue sin descanso.",
+    valoracion: 4.5,
+    imagen: "img/juegos/temple-run.jpg"
+  },
+  {
+    id: 124,
+    nombre: "BioShock",
+    anio: 2007,
+    desarrolladora: "Irrational Games",
+    genero: ["Disparos","Terror","Ciencia ficción"],
+    plataformas: ["PC","Switch","PlayStation","Xbox"],
+    descripcion: "Explora Rapture, una ciudad submarina en ruinas, sobrevive a sus habitantes usando armas y plásmidos y descubre los secretos de su creador.",
+    valoracion: 4.8,
+    imagen: "img/juegos/bioshock.jpg"
+  },
+  {
+    id: 125,
+    nombre: "BioShock 2",
+    anio: 2010,
+    desarrolladora: "2K Marin",
+    genero: ["Disparos","Terror","Ciencia ficción"],
+    plataformas: ["PC","Switch","PlayStation","Xbox"],
+    descripcion: "Regresa a Rapture años después como un Big Daddy, enfréntate a nuevas amenazas y descubre qué ocurrió con la ciudad submarina.",
+    valoracion: 4.5,
+    imagen: "img/juegos/bioshock-2.jpg"
+  },
+  {
+    id: 126,
+    nombre: "The Forest",
+    anio: 2018,
+    desarrolladora: "Endnight Games",
+    genero: ["Supervivencia","Terror","Aventura"],
+    plataformas: ["PC","PlayStation"],
+    descripcion: "Sobrevive en una isla boscosa tras un accidente aéreo, construye refugios, fabrica herramientas y enfréntate a mutantes caníbales mientras buscas a tu hijo.",
+    valoracion: 4.7,
+    imagen: "img/juegos/the-forest.jpg"
+  },
+  {
+    id: 127,
+    nombre: "Sons of the Forest",
+    anio: 2024,
+    desarrolladora: "Endnight Games",
+    genero: ["Supervivencia","Terror","Aventura","Cooperativo"],
+    plataformas: ["PC"],
+    descripcion: "Viaja a una isla remota en una misión de rescate, sobrevive a sus peligrosos habitantes, construye refugios y explora cuevas, solo o con amigos.",
+    valoracion: 4.7,
+    imagen: "img/juegos/sons-of-the-forest.jpg"
+  },
+  {
+    id: 128,
+    nombre: "World of Warcraft",
+    anio: 2004,
+    desarrolladora: "Blizzard Entertainment",
+    genero: ["MMORPG","Rol","Multijugador"],
+    plataformas: ["PC"],
+    descripcion: "Crea tu héroe en el mundo de Azeroth, completa misiones, explora vastos territorios y une fuerzas con otros jugadores para enfrentar mazmorras y bandas.",
+    valoracion: 4.6,
+    imagen: "img/juegos/world-of-warcraft.jpg"
+  },
+  {
+    id: 129,
+    nombre: "League of Legends",
+    anio: 2009,
+    desarrolladora: "Riot Games",
+    genero: ["MOBA","Estrategia","Multijugador"],
+    plataformas: ["PC"],
+    descripcion: "Forma un equipo de cinco campeones con habilidades únicas y compite en partidas estratégicas para destruir el nexo enemigo.",
+    valoracion: 4.5,
+    imagen: "img/juegos/league-of-legends.jpg"
+  },
+  {
+    id: 130,
+    nombre: "Albion Online",
+    anio: 2017,
+    desarrolladora: "Sandbox Interactive",
+    genero: ["MMORPG","Sandbox","Multijugador"],
+    plataformas: ["PC","Android","iOS"],
+    descripcion: "Explora un mundo medieval donde tú decides tu camino: recolecta, fabrica, comercia y combate en un mercado impulsado por los propios jugadores.",
+    valoracion: 4.4,
+    imagen: "img/juegos/albion-online.jpg"
   }
 ];
