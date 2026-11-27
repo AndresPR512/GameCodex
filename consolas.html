@@ -4,23 +4,244 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consolas y plataformas | GameCodex</title>
+    <meta name="description" content="Conoce las principales plataformas de videojuegos: PC, PlayStation, Xbox, Nintendo y dispositivos móviles. Características, ventajas y juegos representativos.">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/menu.css">
-    <!-- Agregar css/consolas.css cuando se desarrolle esta sección. -->
+    <link rel="stylesheet" href="css/consolas.css">
     <script src="js/menu.js" defer></script>
-    <!-- Agregar los scripts de esta sección durante su desarrollo. -->
 </head>
 <body data-pagina="consolas">
     <!-- HU-02: aquí se insertará el menú lateral compartido mediante menu.js. -->
     <nav id="menu-lateral" aria-label="Navegación principal"></nav>
 
-    <main id="contenido-principal">
-        <header>
-            <h1>Consolas y plataformas</h1>
-            <p>Información sobre plataformas para jugar.</p>
+    <main id="contenido-principal" class="contenido-principal">
+        <!-- HU-14: encabezado de la página -->
+        <header class="hero plataformas-hero">
+            <div class="contenedor">
+                <span class="plataformas-epica">Aprender sobre videojuegos</span>
+                <h1>Consolas y <span class="texto-degradado">plataformas</span></h1>
+                <p>Cada plataforma ofrece una forma distinta de jugar. Conoce sus características, sus ventajas y los juegos que mejor las representan para elegir la que más se parece a ti.</p>
+            </div>
         </header>
-        <!-- TODO (HU-14): desarrollar el contenido de esta página. -->
+
+        <section class="seccion" aria-labelledby="titulo-plataformas">
+            <div class="contenedor">
+                <div class="encabezado-seccion">
+                    <h2 id="titulo-plataformas">Explora por plataforma</h2>
+                    <p>Elige una plataforma para ir directo a su información.</p>
+                </div>
+
+                <!-- Atajos a cada tarjeta (no necesitan JavaScript) -->
+                <nav class="chips plataformas-atajos" aria-label="Ir a una plataforma">
+                    <a class="chip" href="#pc">PC</a>
+                    <a class="chip" href="#playstation">PlayStation</a>
+                    <a class="chip" href="#xbox">Xbox</a>
+                    <a class="chip" href="#nintendo">Nintendo</a>
+                    <a class="chip" href="#moviles">Dispositivos móviles</a>
+                </nav>
+
+                <!-- data-plataforma usa el mismo nombre que "plataformas" en js/juegos.js -->
+                <div class="cuadricula plataformas-lista">
+
+                    <article class="tarjeta tarjeta-fija plataforma-card" id="pc" data-plataforma="PC" style="--acento: var(--color-secondary);">
+                        <div class="plataforma-visual">
+                            <!-- Para usar una imagen: <img src="img/plataformas/pc.jpg" alt="..."> -->
+                            <span class="plataforma-icono" aria-hidden="true">🖥️</span>
+                            <span class="plataforma-visual-nombre">PC</span>
+                        </div>
+                        <div class="tarjeta-cuerpo">
+                            <h3>PC</h3>
+                            <p>La computadora de escritorio o portátil es la plataforma más abierta: tú eliges el hardware, la tienda y hasta cómo quieres controlar el juego.</p>
+                            <p class="plataforma-ideal"><strong>Ideal para:</strong> quienes buscan libertad, rendimiento y variedad.</p>
+
+                            <h4 class="plataforma-subtitulo">Características principales</h4>
+                            <ul class="plataforma-lista">
+                            <li>Hardware personalizable y actualizable</li>
+                            <li>Se juega con teclado y mouse o con control</li>
+                            <li>Tiendas como Steam, Epic Games Store y GOG</li>
+                            <li>Comunidad activa de mods y contenido creado por jugadores</li>
+                            </ul>
+
+                            <h4 class="plataforma-subtitulo">Ventajas</h4>
+                            <ul class="plataforma-lista plataforma-ventajas">
+                            <li>Gráficos y rendimiento ajustables según tu equipo</li>
+                            <li>Enorme catálogo, con muchos juegos independientes</li>
+                            <li>Ofertas y descuentos frecuentes</li>
+                            <li>Sirve también para trabajar, estudiar y crear</li>
+                            </ul>
+
+                            <h4 class="plataforma-subtitulo">Juegos representativos</h4>
+                            <ul class="etiquetas plataforma-ejemplos">
+                            <li class="etiqueta">Counter-Strike 2</li>
+                            <li class="etiqueta">Half-Life: Alyx</li>
+                            <li class="etiqueta">Stardew Valley</li>
+                            <li class="etiqueta">Minecraft</li>
+                            </ul>
+
+                            <a class="btn btn-secundario" href="catalogo.html?plataforma=PC" aria-label="Ver juegos de PC en el catálogo">Ver en el catálogo</a>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta tarjeta-fija plataforma-card" id="playstation" data-plataforma="PlayStation" style="--acento: var(--epic-2);">
+                        <div class="plataforma-visual">
+                            <!-- Para usar una imagen: <img src="img/plataformas/playstation.jpg" alt="..."> -->
+                            <span class="plataforma-icono" aria-hidden="true">🎮</span>
+                            <span class="plataforma-visual-nombre">PlayStation</span>
+                        </div>
+                        <div class="tarjeta-cuerpo">
+                            <h3>PlayStation</h3>
+                            <p>La consola de Sony destaca por sus grandes aventuras para un jugador, con historias cinematográficas y gráficos de primer nivel.</p>
+                            <p class="plataforma-ideal"><strong>Ideal para:</strong> quienes disfrutan de aventuras narrativas y gráficos de alto nivel.</p>
+
+                            <h4 class="plataforma-subtitulo">Características principales</h4>
+                            <ul class="plataforma-lista">
+                            <li>Consola de sobremesa fácil de usar: conectar y jugar</li>
+                            <li>Control DualSense con vibración háptica y gatillos adaptativos</li>
+                            <li>Exclusivos desarrollados por los estudios de Sony</li>
+                            <li>Servicio de suscripción PlayStation Plus</li>
+                            </ul>
+
+                            <h4 class="plataforma-subtitulo">Ventajas</h4>
+                            <ul class="plataforma-lista plataforma-ventajas">
+                            <li>Historias y mundos muy cuidados</li>
+                            <li>Rendimiento estable, pensado para una sola configuración</li>
+                            <li>Juego en línea y almacenamiento en la nube con suscripción</li>
+                            <li>Compatible con realidad virtual (PS VR2)</li>
+                            </ul>
+
+                            <h4 class="plataforma-subtitulo">Juegos representativos</h4>
+                            <ul class="etiquetas plataforma-ejemplos">
+                            <li class="etiqueta">God of War Ragnarök</li>
+                            <li class="etiqueta">Marvel's Spider-Man 2</li>
+                            <li class="etiqueta">The Last of Us Part II</li>
+                            <li class="etiqueta">Astro Bot</li>
+                            </ul>
+
+                            <a class="btn btn-secundario" href="catalogo.html?plataforma=PlayStation" aria-label="Ver juegos de PlayStation en el catálogo">Ver en el catálogo</a>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta tarjeta-fija plataforma-card" id="xbox" data-plataforma="Xbox" style="--acento: var(--color-success);">
+                        <div class="plataforma-visual">
+                            <!-- Para usar una imagen: <img src="img/plataformas/xbox.jpg" alt="..."> -->
+                            <span class="plataforma-icono" aria-hidden="true">🟢</span>
+                            <span class="plataforma-visual-nombre">Xbox</span>
+                        </div>
+                        <div class="tarjeta-cuerpo">
+                            <h3>Xbox</h3>
+                            <p>La consola de Microsoft apuesta por el acceso a muchos juegos mediante suscripción y por la conexión con el mundo de PC.</p>
+                            <p class="plataforma-ideal"><strong>Ideal para:</strong> quienes quieren probar muchos juegos sin comprarlos uno por uno.</p>
+
+                            <h4 class="plataforma-subtitulo">Características principales</h4>
+                            <ul class="plataforma-lista">
+                            <li>Consolas Xbox Series X y Series S</li>
+                            <li>Servicio Xbox Game Pass con catálogo rotativo</li>
+                            <li>Juegos de Microsoft disponibles también en PC</li>
+                            <li>Compatibilidad con juegos de generaciones anteriores</li>
+                            </ul>
+
+                            <h4 class="plataforma-subtitulo">Ventajas</h4>
+                            <ul class="plataforma-lista plataforma-ventajas">
+                            <li>Gran cantidad de juegos por una cuota mensual</li>
+                            <li>Progreso compartido entre consola y PC</li>
+                            <li>Juego en la nube desde otros dispositivos</li>
+                            <li>Excelente para jugar en línea con amigos</li>
+                            </ul>
+
+                            <h4 class="plataforma-subtitulo">Juegos representativos</h4>
+                            <ul class="etiquetas plataforma-ejemplos">
+                            <li class="etiqueta">Halo Infinite</li>
+                            <li class="etiqueta">Forza Horizon 5</li>
+                            <li class="etiqueta">Gears 5</li>
+                            <li class="etiqueta">Starfield</li>
+                            </ul>
+
+                            <a class="btn btn-secundario" href="catalogo.html?plataforma=Xbox" aria-label="Ver juegos de Xbox en el catálogo">Ver en el catálogo</a>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta tarjeta-fija plataforma-card" id="nintendo" data-plataforma="Switch" style="--acento: var(--color-danger);">
+                        <div class="plataforma-visual">
+                            <!-- Para usar una imagen: <img src="img/plataformas/nintendo.jpg" alt="..."> -->
+                            <span class="plataforma-icono" aria-hidden="true">🕹️</span>
+                            <span class="plataforma-visual-nombre">Nintendo</span>
+                        </div>
+                        <div class="tarjeta-cuerpo">
+                            <h3>Nintendo</h3>
+                            <p>Nintendo se centra en la diversión y la creatividad. Sus consolas Switch combinan modo portátil y modo sobremesa en un mismo equipo.</p>
+                            <p class="plataforma-ideal"><strong>Ideal para:</strong> quienes buscan diversión en familia y juegos para llevar a todas partes.</p>
+
+                            <h4 class="plataforma-subtitulo">Características principales</h4>
+                            <ul class="plataforma-lista">
+                            <li>Consolas híbridas: se juegan en la TV o en la mano</li>
+                            <li>Controles Joy-Con desmontables con detección de movimiento</li>
+                            <li>Personajes y franquicias propias, como Mario y Zelda</li>
+                            <li>Fuerte enfoque en el juego local y familiar</li>
+                            </ul>
+
+                            <h4 class="plataforma-subtitulo">Ventajas</h4>
+                            <ul class="plataforma-lista plataforma-ventajas">
+                            <li>Juegos para todas las edades</li>
+                            <li>Se puede jugar en casa o en cualquier lugar</li>
+                            <li>Muy buena opción para jugar acompañado</li>
+                            <li>Experiencias originales, con ideas diferentes</li>
+                            </ul>
+
+                            <h4 class="plataforma-subtitulo">Juegos representativos</h4>
+                            <ul class="etiquetas plataforma-ejemplos">
+                            <li class="etiqueta">The Legend of Zelda: Tears of the Kingdom</li>
+                            <li class="etiqueta">Super Mario Odyssey</li>
+                            <li class="etiqueta">Mario Kart 8 Deluxe</li>
+                            <li class="etiqueta">Animal Crossing: New Horizons</li>
+                            </ul>
+
+                            <a class="btn btn-secundario" href="catalogo.html?plataforma=Switch" aria-label="Ver juegos de Nintendo en el catálogo">Ver en el catálogo</a>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta tarjeta-fija plataforma-card" id="moviles" data-plataforma="Móvil" style="--acento: var(--epic-5);">
+                        <div class="plataforma-visual">
+                            <!-- Para usar una imagen: <img src="img/plataformas/moviles.jpg" alt="..."> -->
+                            <span class="plataforma-icono" aria-hidden="true">📱</span>
+                            <span class="plataforma-visual-nombre">Dispositivos móviles</span>
+                        </div>
+                        <div class="tarjeta-cuerpo">
+                            <h3>Dispositivos móviles</h3>
+                            <p>Los celulares y tabletas con Android o iOS permiten jugar en cualquier momento, sin comprar equipo adicional.</p>
+                            <p class="plataforma-ideal"><strong>Ideal para:</strong> quienes quieren jugar rápido y en cualquier lugar.</p>
+
+                            <h4 class="plataforma-subtitulo">Características principales</h4>
+                            <ul class="plataforma-lista">
+                            <li>Pantalla táctil, giroscopio y cámara como controles</li>
+                            <li>Tiendas Google Play y App Store</li>
+                            <li>Muchos juegos gratuitos con compras dentro del juego</li>
+                            <li>Partidas cortas, ideales para ratos libres</li>
+                            </ul>
+
+                            <h4 class="plataforma-subtitulo">Ventajas</h4>
+                            <ul class="plataforma-lista plataforma-ventajas">
+                            <li>Ya lo tienes en el bolsillo: no hace falta comprar nada extra</li>
+                            <li>Fáciles de empezar y de aprender</li>
+                            <li>Juegos que se adaptan a pocos minutos</li>
+                            <li>Muchos incluyen juego en línea y eventos</li>
+                            </ul>
+
+                            <h4 class="plataforma-subtitulo">Juegos representativos</h4>
+                            <ul class="etiquetas plataforma-ejemplos">
+                            <li class="etiqueta">Clash Royale</li>
+                            <li class="etiqueta">Among Us</li>
+                            <li class="etiqueta">Pokémon GO</li>
+                            <li class="etiqueta">Genshin Impact</li>
+                            </ul>
+
+                            <a class="btn btn-secundario" href="catalogo.html?plataforma=Móvil" aria-label="Ver juegos de Dispositivos móviles en el catálogo">Ver en el catálogo</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Pie de página compartido; se completará junto con HU-02. -->
